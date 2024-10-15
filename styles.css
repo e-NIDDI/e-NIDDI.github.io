@@ -153,7 +153,7 @@ h2 {
 
 /* Updated image styles for place cards */
 .place img {
-    width: 50%; /* Change this value to make images smaller */
+    max-width: 50%; /* Change this value to make images smaller */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Rounded corners for images */
     display: block; /* Ensure images are block elements */
@@ -190,6 +190,10 @@ footer {
 @media (min-width: 769px) {
     #sidebar {
         display: none; /* Hide sidebar on larger screens */
+    }
+
+    img{
+        width: 50%;
     }
 
     
