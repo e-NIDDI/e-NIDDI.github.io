@@ -150,11 +150,13 @@ h2 {
     border-radius: 5px; /* Rounded corners */
 }
 
-/* Image styles for place cards */
+/* Updated image styles for place cards */
 .place img {
-    max-width: 100%; /* Ensure images do not exceed card width */
+    max-width: 50%; /* Change this value to make images smaller */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Rounded corners for images */
+    display: block; /* Ensure images are block elements */
+    margin: 0 auto; /* Center align the images */
 }
 
 /* Footer styles */
@@ -178,6 +180,9 @@ footer {
     h2 {
         font-size: 24px; /* Slightly smaller heading font size */
     }
+    .place img {
+        max-width: 100%; /* Make images full width on larger screens */
+    }
 }
 
 /* Hide sidebar by default on larger screens */
@@ -185,7 +190,6 @@ footer {
     #sidebar {
         display: none; /* Hide sidebar on larger screens */
     }
-    #hamburger{
-        display: none;
-    }
+
+    
 }
