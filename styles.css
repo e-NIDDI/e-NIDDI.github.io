@@ -142,6 +142,7 @@ h2 {
 }
 
 /* Place card styles */
+
 .place {
     background: #e0f7fa; /* Light Blue background */
     border: 1px solid #007acc; /* Border color */
@@ -152,7 +153,7 @@ h2 {
 
 /* Updated image styles for place cards */
 .place img {
-    max-width: 50%; /* Change this value to make images smaller */
+    width: 50%; /* Change this value to make images smaller */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Rounded corners for images */
     display: block; /* Ensure images are block elements */
