@@ -1,56 +1,191 @@
-/* Styles for the sidebar */
+/* Base styles for body and general layout */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Light background for modern look */
+}
+
+/* Header styles */
+header {
+    display: flex; /* Flex layout for header */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between logo and hamburger */
+    background: #003d00; /* Darker Green */
+    color: white;
+    padding: 15px;
+}
+
+header .logo {
+    font-size: 26px; /* Slightly larger logo font */
+    font-weight: bold;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    font-size: 24px; /* Hamburger icon size */
+    cursor: pointer;
+    display: block; /* Always show hamburger icon */
+}
+
+/* Sidebar styles */
 .sidebar {
     width: 250px; /* Width of the sidebar */
     position: fixed; /* Stay in place */
-    left: -250px; /* Initially hide sidebar */
+    top: 0; /* Align to the top of the viewport */
+    left: -250px; /* Initially hide the sidebar */
     height: 100%; /* Full-height */
     background-color: #333; /* Dark background color */
-    overflow: auto; /* Enable scroll if needed */
-    transition: 0.3s; /* Transition effect */
-    z-index: 1; /* Ensure it layers above other elements */
+    overflow-y: auto; /* Enable vertical scroll if needed */
+    transition: left 0.3s; /* Transition effect for left property */
+    z-index: 1000; /* Ensure it layers above other elements */
 }
 
 .sidebar ul {
     padding: 0;
-    list-style-type: none;
+    list-style-type: none; /* Remove bullets */
 }
 
 .sidebar ul li a {
-    padding: 10px 15px;
+    padding: 10px 15px; /* Padding for sidebar links */
     text-decoration: none;
     font-size: 18px;
-    color: white;
-    display: block;
+    color: white; /* Text color */
+    display: block; /* Full-width clickable areas */
 }
 
 .sidebar ul li a:hover {
     background-color: #575757; /* Darker background on hover */
 }
 
-/* Toggle sidebar */
-#hamburger:hover + #sidebar {
-    left: 0; /* Show sidebar when hamburger is hovered */
+/* Navigation styles */
+nav {
+    display: flex; /* Flex layout for nav */
+    justify-content: center; /* Center nav items */
 }
 
-/* Header styles */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav ul {
+    list-style: none;
+    display: flex; /* Flexible layout for nav links */
+    padding: 0;
 }
 
-/* Image styles */
+nav ul li {
+    margin: 0 15px; /* Space between nav items */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Padding around nav items */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3); /* Hover effect */
+}
+
+/* Hero section styles */
+.hero {
+    background: linear-gradient(to right, #007acc, #ffbb00); /* Bright Blue and Yellow */
+    color: white;
+    text-align: center;
+    padding: 60px 20px; /* Padding for hero section */
+}
+
+/* Input styles */
+input[type="text"] {
+    width: calc(100% - 40px); /* Full width minus padding */
+    max-width: 600px; /* Max width for larger screens */
+    padding: 12px 20px; /* Padding for the input */
+    margin: 20px auto; /* Center input on the page */
+    border: 2px solid #007acc; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px; /* Font size for input */
+    outline: none; /* No outline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus */
+}
+
+input[type="text"]:focus {
+    border-color: #ffbb00; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(255, 187, 0, 0.8); /* Glow effect */
+}
+
+/* Button styles */
+button {
+    background-color: #ffbb00; /* Yellow background */
+    color: #003d00; /* Dark Green text */
+    border: none;
+    padding: 10px 20px; /* Padding for button */
+    border-radius: 5px; /* Smooth rounded button */
+    margin-top: 20px; /* Space above button */
+    cursor: pointer;
+    font-size: 16px; /* Font size for button */
+    transition: background 0.3s; /* Smooth hover effect */
+}
+
+button:hover {
+    background-color: #ffd700; /* Slightly brighter yellow on hover */
+}
+
+/* Section styles */
+section {
+    padding: 40px 20px; /* Padding for sections */
+}
+
+/* Heading styles */
+h2 {
+    color: #005f5f; /* Medium Green for headings */
+}
+
+/* Place card styles */
+.place {
+    background: #e0f7fa; /* Light Blue background */
+    border: 1px solid #007acc; /* Border color */
+    margin: 20px 0; /* Margin around place cards */
+    padding: 20px; /* Padding inside place cards */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Image styles for place cards */
 .place img {
-    width: 50%; /* Make images take half the width */
+    max-width: 100%; /* Ensure images do not exceed card width */
     height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
 }
 
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-    /* Sidebar toggle on click (handle this in JavaScript) */
-    #sidebar {
-        left: -250px; /* Hide sidebar by default */
+/* Footer styles */
+footer {
+    background: #003d00; /* Dark Green background */
+    color: white; /* White text */
+    text-align: center; /* Center text */
+    padding: 20px 0; /* Padding for footer */
+}
+
+/* Responsive design changes */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide navbar initially on mobile */
+    }
+
+    section {
+        padding: 20px 10px; /* Compact padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 24px; /* Slightly smaller heading font size */
     }
 }
 
-/* Add any additional styles as needed */
+/* Hide sidebar by default on larger screens */
+@media (min-width: 769px) {
+    #sidebar {
+        display: none; /* Hide sidebar on larger screens */
+    }
+    #hamburger{
+        display: none;
+    }
+}
