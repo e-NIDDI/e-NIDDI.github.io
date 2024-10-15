@@ -25,31 +25,37 @@ header .logo {
     display: none; /* Hidden by default, shown on mobile */
 }
 
-nav {
-    display: flex; /* Flex layout for nav */
-    justify-content: center; /* Center nav items */
+.sidebar {
+    width: 250px; /* Width of the sidebar */
+    position: fixed; /* Stay in place */
+    left: -250px; /* Initially hide sidebar */
+    height: 100%; /* Full-height */
+    background-color: #333; /* Dark background color */
+    overflow: auto; /* Enable scroll if needed */
+    transition: 0.3s; /* Transition effect */
+    z-index: 1; /* Ensure it layers above other elements */
 }
 
-nav ul {
-    list-style: none;
-    display: flex; /* Flexible layout for nav links */
+.sidebar ul {
     padding: 0;
+    list-style-type: none;
 }
 
-nav ul li {
-    margin: 0 15px; /* Space between nav items */
-}
-
-nav ul li a {
-    color: white;
+.sidebar ul li a {
+    padding: 10px 15px;
     text-decoration: none;
-    padding: 10px 15px; /* Padding around nav items */
-    border-radius: 5px; /* Rounded corners */
-    transition: background 0.3s; /* Smooth hover effect */
+    font-size: 18px;
+    color: white;
+    display: block;
 }
 
-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.3); /* Hover effect */
+.sidebar ul li a:hover {
+    background-color: #575757; /* Darker background on hover */
+}
+
+/* Toggle sidebar */
+#hamburger:hover + #sidebar {
+    left: 0; /* Show sidebar when hamburger is hovered */
 }
 
 .hero {
@@ -110,10 +116,10 @@ h2 {
 }
 
 .place img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 50%; /* Make images take half the width */
+    height: auto; /* Maintain aspect ratio */
 }
+
 
 footer {
     background: #003d00;

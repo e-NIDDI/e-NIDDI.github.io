@@ -4,14 +4,14 @@ document.getElementById('hamburger').addEventListener('click', function() {
 });
 
 // Adding event listeners to each nav item
-const navItems = document.querySelectorAll('#navbar ul li a');
-
-navItems.forEach(item => {
-    item.addEventListener('click', function() {
-        const navbar = document.getElementById('navbar');
-        navbar.classList.remove('show'); // Hide the menu when an item is clicked
-    });
-});
+document.getElementById('hamburger').onclick = function() {
+    var sidebar = document.getElementById('sidebar');
+    if (sidebar.style.left === '0px') {
+        sidebar.style.left = '-250px'; // Hide sidebar
+    } else {
+        sidebar.style.left = '0px'; // Show sidebar
+    }
+};
 
 // Search function
 function searchPlaces() {
