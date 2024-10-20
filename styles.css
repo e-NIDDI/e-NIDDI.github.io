@@ -191,6 +191,9 @@ footer {
     #sidebar {
         display: none; /* Hide sidebar on larger screens */
     }
+    .hamburger{
+        display: none;
+    }
 
     img{
         width: 50%;
